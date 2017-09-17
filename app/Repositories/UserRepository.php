@@ -4,8 +4,15 @@ namespace App\Repositories;
 
 use App\Models\User;
 
+/*
+ * Repository to manage users
+ */
+
 class UserRepository
 {
+    /*
+     * Create and save a new user to DB
+     */
     public function create(array $data)
     {
         
@@ -24,6 +31,9 @@ class UserRepository
         return $user;
     }
 
+    /*
+     * Update an existing user in the DB
+     */
     public function update(User $user, array $data)
     {
 
