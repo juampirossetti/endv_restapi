@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7b49d128d5dc3a81836405a47e86851b",
-    "content-hash": "86f82ac60670118abbf6172d11f0bcde",
+    "hash": "d94a26b6d871714e478f5e67990b7dcc",
+    "content-hash": "b57d177eaa4f31f09d61bb59a50096ba",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -1271,6 +1271,77 @@
                 "php"
             ],
             "time": "2017-09-02 17:10:46"
+        },
+        {
+            "name": "optimus/architect",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/esbenp/architect.git",
+                "reference": "93b1faaeed4b41d9a5c5118925ffdd3933975b27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/esbenp/architect/zipball/93b1faaeed4b41d9a5c5118925ffdd3933975b27",
+                "reference": "93b1faaeed4b41d9a5c5118925ffdd3933975b27",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "orchestra/testbench": "~3.1",
+                "phpunit/phpunit": "~4.7",
+                "satooshi/php-coveralls": "dev-master@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Optimus\\Architect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2015-10-29 19:40:54"
+        },
+        {
+            "name": "optimus/bruno",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/esbenp/bruno.git",
+                "reference": "225b33d541c04923189308e84cb4f52c65d5186e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/esbenp/bruno/zipball/225b33d541c04923189308e84cb4f52c65d5186e",
+                "reference": "225b33d541c04923189308e84cb4f52c65d5186e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.4",
+                "optimus/architect": "~1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "orchestra/testbench": "~3.1",
+                "phpunit/phpunit": "~4.7",
+                "satooshi/php-coveralls": "dev-master@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Optimus\\Bruno\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-08-03 11:33:12"
         },
         {
             "name": "optimus/heimdal",

@@ -3,28 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Repositories\EventRepository;
-
 use App\Http\Requests\CreateDogdayRequest;
-
 use App\Http\Requests\UpdateDogdayRequest;
-
 use App\Models\Dogday;
+use Optimus\Bruno\EloquentBuilderTrait;
+use Optimus\Bruno\LaravelController;
 
-class DogdayController extends Controller
+class DogdayController extends LaravelController
 {
-    
+    use EloquentBuilderTrait;
+
     private $eventRepository;
 
     public function __construct(EventRepository $eventRepo) {
-        
         $this->eventRepository = $eventRepo;
     }
 
     public function index()
     {
-        return Dogday::all()->load('eventInfo');
+        $resourceOptions = $this->parseResourceOptions();
+        // Start a new query using Eloquent query builder
+        $query = Dogday::query();
+        $this->applyResourceOptions($query, $resourceOptions);
+        $dogdays = $query->get();
+
+        // Parse the data using Optimus\Architect
+        $parsedData = $this->parseData($dogdays, $resourceOptions, 'dogdays');
+
+        // Create JSON response of parsed data
+        return $this->response($parsedData);
     }
 
     public function show(Dogday $dogday)
@@ -38,8 +46,6 @@ class DogdayController extends Controller
         $dogday = $request->get('dogday', []);
         
         $event = $request->get('event', []);
-
-        //dd($event);
 
         $dogday_event = $this->eventRepository->createDogdayEvent($event, $dogday);
 

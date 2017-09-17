@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Repositories\UserRepository;
-
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-
 use App\Models\User;
+use Optimus\Bruno\EloquentBuilderTrait;
+use Optimus\Bruno\LaravelController;
 
-class UserController extends Controller
+class UserController extends LaravelController
 {
+    use EloquentBuilderTrait;
 
     private $userRepository;
 
@@ -20,10 +20,19 @@ class UserController extends Controller
         $this->userRepository = $userRepo;
     }
 
-
     public function index()
     {
-        return User::all();
+        $resourceOptions = $this->parseResourceOptions();
+        // Start a new query using Eloquent query builder
+        $query = User::query();
+        $this->applyResourceOptions($query, $resourceOptions);
+        $users = $query->get();
+
+        // Parse the data using Optimus\Architect
+        $parsedData = $this->parseData($users, $resourceOptions, 'users');
+
+        // Create JSON response of parsed data
+        return $this->response($parsedData);
     }
 
     public function show(User $user)
