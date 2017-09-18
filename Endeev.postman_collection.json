@@ -1,0 +1,850 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Endeev",
+		"_postman_id": "6c6a44db-fe83-3be1-4c93-e2de6f9b5677",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"description": "",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"url": "http://localhost:8000/api/authenticate",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "jose@email.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "secret",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"url": "http://localhost:8000/api/user",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aGVudGljYXRlIiwiaWF0IjoxNTA1NzAyMTMwLCJleHAiOjE1MDU3MDU3MzAsIm5iZiI6MTUwNTcwMjEzMCwianRpIjoiNFdrc2Z0QnV2WjN3QkNaNiJ9.lEgqGsCfYPHBCGcLhr5vLzBb4fNKUtd3Lx8E3R-pTro",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Lista de usuarios del sistema"
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"url": "http://localhost:8000/api/user/5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aGVudGljYXRlIiwiaWF0IjoxNTA1NzAyMTMwLCJleHAiOjE1MDU3MDU3MzAsIm5iZiI6MTUwNTcwMjEzMCwianRpIjoiNFdrc2Z0QnV2WjN3QkNaNiJ9.lEgqGsCfYPHBCGcLhr5vLzBb4fNKUtd3Lx8E3R-pTro",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8000/api/user",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aGVudGljYXRlIiwiaWF0IjoxNTA1NzAyMTMwLCJleHAiOjE1MDU3MDU3MzAsIm5iZiI6MTUwNTcwMjEzMCwianRpIjoiNFdrc2Z0QnV2WjN3QkNaNiJ9.lEgqGsCfYPHBCGcLhr5vLzBb4fNKUtd3Lx8E3R-pTro",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": {\n\t\t\"name\":\"José\",\n\t\t\"surname\": \"Perez\",\n\t\t\"email\":\"jose@email.com\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8000/api/user/5",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\": {\n\t\t\"name\": \"John Lockman I\",\n\t\t\"email\": \"jeffry.collins@example.org\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8000/api/user/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Index with filter",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/user?filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D=name&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D=jos&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D=ct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D",
+									"value": "name",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D",
+									"value": "jos",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D",
+									"value": "ct",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aGVudGljYXRlIiwiaWF0IjoxNTA1NzAyMTMwLCJleHAiOjE1MDU3MDU3MzAsIm5iZiI6MTUwNTcwMjEzMCwianRpIjoiNFdrc2Z0QnV2WjN3QkNaNiJ9.lEgqGsCfYPHBCGcLhr5vLzBb4fNKUtd3Lx8E3R-pTro",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DogDay Event",
+			"description": "",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/dogday?includes[]=eventInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dogday"
+							],
+							"query": [
+								{
+									"key": "includes[]",
+									"value": "eventInfo",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"url": "http://localhost:8000/api/dogday/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8000/api/dogday",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"event\": {\n\t\t\"date\":\"2017-10-26\",\n\t\t\"from\": \"04:00\",\n\t\t\"until\": \"13:00\",\n\t\t\"description\": \"\"\n\t},\n\t\"dogday\": {\n\t\t\"pet_name\": \"abc\"\n\t}\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8000/api/dogday/7",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8000/api/dogday/11",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dogday\": {\n\t\t\"pet_name\": \"tow\"\n\t},\n\t\"event\": {\n\t\t\"description\": \"Nueva Descripción\",\n\t\t\"date\": \"2017-10-29\",\n\t\t\"from\": \"11:30\",\n\t\t\"until\": \"12:00\"\n\t}\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Index with filter",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/dogday?filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D=pet_name&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D=to&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D=ct&includes[]=eventInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"dogday"
+							],
+							"query": [
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D",
+									"value": "pet_name",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D",
+									"value": "to",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D",
+									"value": "ct",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "includes[]",
+									"value": "eventInfo",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GreenFriday Event",
+			"description": "",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/greenfriday?includes[]=eventInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"greenfriday"
+							],
+							"query": [
+								{
+									"key": "includes[]",
+									"value": "eventInfo",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"url": "http://localhost:8000/api/greenfriday/3",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8000/api/greenfriday",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"event\": {\n\t\t\"date\":\"2017-10-27\",\n\t\t\"from\": \"13:00\",\n\t\t\"until\": \"15:00\",\n\t\t\"description\": \"\"\n\t},\n\t\"green_friday\": {\n\t\t\"event_name\": \"abc\"\n\t}\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8000/api/greenfriday/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aGVudGljYXRlIiwiaWF0IjoxNTA1NjkxMTkxLCJleHAiOjE1MDU2OTQ3OTEsIm5iZiI6MTUwNTY5MTE5MSwianRpIjoieFJyNzJpQ05ZRUVWWUFDRCJ9.8df22HtH_9RcoGQdXUrtBU51a6saDHNPEt7YTsnHyG0",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Index with filter",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/greenfriday?filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D=event_name&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D=ab&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D=ct&includes[]=eventInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"greenfriday"
+							],
+							"query": [
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D",
+									"value": "event_name",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D",
+									"value": "ab",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D",
+									"value": "ct",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "includes[]",
+									"value": "eventInfo",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8000/api/greenfriday/10",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"event\": {\n\t\t\"date\":\"2016-09-25\",\n\t\t\"from\": \"10:40\",\n\t\t\"description\": \"\"\n\t},\n\t\"green_friday\": {\n\t\t\"event_name\": \"abcde\"\n\t}\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Meeting Room Event",
+			"description": "",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/meetingroom?includes[]=eventInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"meetingroom"
+							],
+							"query": [
+								{
+									"key": "includes[]",
+									"value": "eventInfo",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"url": "http://localhost:8000/api/meetingroom/3",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:8000/api/meetingroom",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"event\": {\n\t\t\"date\":\"2016-10-17\",\n\t\t\"from\": \"21:15\",\n\t\t\"until\": \"22:30\",\n\t\t\"description\": \"\"\n\t},\n\t\"meeting_room\": {\n\t\t\"event_type\": 3\n\t}\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:8000/api/meetingroom/7",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"event\": {\n\t\t\"date\":\"2016-09-17\",\n\t\t\"from\": \"05:45\",\n\t\t\"until\": \"06:45\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8000/api/meetingroom/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hcGkvYXV0aGVudGljYXRlIiwiaWF0IjoxNTA1Njk2MDcxLCJleHAiOjE1MDU2OTk2NzEsIm5iZiI6MTUwNTY5NjA3MSwianRpIjoiUzF2NDlPcFJPQVgyOGZWbiJ9.4mFEhkzg7q-7G1PKX0-VnrNAVNIXY7380CxM_7eszZI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Index with filter",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/meetingroom?filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D=event_type&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D=3&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D=ct&includes[]=eventInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"meetingroom"
+							],
+							"query": [
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D",
+									"value": "event_type",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D",
+									"value": "3",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D",
+									"value": "ct",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "includes[]",
+									"value": "eventInfo",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"description": "",
+			"item": [
+				{
+					"name": "Index with filter",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/event?filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D=date&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D=2016-09-17&filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D=ct&includes[]=eventable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"event"
+							],
+							"query": [
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bkey%5D",
+									"value": "date",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Bvalue%5D",
+									"value": "2016-09-17",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "filter_groups%5B0%5D%5Bfilters%5D%5B0%5D%5Boperator%5D",
+									"value": "ct",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "includes[]",
+									"value": "eventable",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Index",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8000/api/event?includes[]=eventable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"event"
+							],
+							"query": [
+								{
+									"key": "includes[]",
+									"value": "eventable",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"url": "http://localhost:8000/api/event/4",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjExLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTUwNTcwNDc2MCwiZXhwIjoxNTA1NzA4MzYwLCJuYmYiOjE1MDU3MDQ3NjAsImp0aSI6Ik9lUzBWN2lRM2p3cThCY2sifQ.r8sL_lK-dFZtS4ItIMd_NsMU0yx2s3oNIrMByq70RxI",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
