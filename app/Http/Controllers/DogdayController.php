@@ -63,7 +63,7 @@ class DogdayController extends LaravelController
         
         $dogday_event = $this->dogdayService->update($dogday_array, $event_array, $dogday);
         
-        return response()->json($dogday_event->load('eventInfo'), 201);
+        return response()->json($dogday_event->load('eventInfo'), 200);
 
     }
 

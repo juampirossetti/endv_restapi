@@ -6,14 +6,14 @@ use App\Models\Dogday;
 use App\Models\Event;
 
 /*
- * Repository to manage events
+ * Repository to manage Dogday events
  */
-class EventRepository
+class DogdayRepository
 {
     /*
      * Create and save a new Dogday event to DB
      */
-    public function createDogdayEvent(array $event_data, array $dogday_data)
+    public function create(array $event_data, array $dogday_data)
     {
         \DB::beginTransaction();
         try {
@@ -42,7 +42,7 @@ class EventRepository
     /*
      * Update an existing dogday event in the DB
      */
-    public function updateDogdayEvent(Dogday $dogday, array $dogday_data, array $event_data)
+    public function update(Dogday $dogday, array $dogday_data, array $event_data)
     {
         \DB::beginTransaction();
         try {
