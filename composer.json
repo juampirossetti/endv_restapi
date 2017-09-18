@@ -24,7 +24,12 @@
         ],
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "app/Helpers/DogdayValidationHelper.php",
+            "app/Helpers/GreenFridayValidationHelper.php",
+            "app/Helpers/MeetingRoomValidationHelper.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

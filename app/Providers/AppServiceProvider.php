@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
         Relation::morphMap([
             'Dog Day' => 'App\Models\Dogday',
             'Green Friday' => 'App\Models\GreenFriday',
-            //'meeting' => 'App\Video'
+            'Meeting Room' => 'App\Models\MeetingRoom'
 
 ]);
     }

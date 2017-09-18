@@ -1,6 +1,6 @@
 <p align="center"><img src="http://www.endeev.com/wp-content/themes/incubator/images/endeev-colorlogo.png"></p>
 
-## Endeev - Ejercicio práctico
+# Endeev - Ejercicio práctico
 
 Este repositorio incluye una resolución a un ejercicio de programación que se explica a continuación.
 
@@ -28,7 +28,7 @@ Se debe desarrollar una API que permita a la empresa contar con un sistema de re
 
 1. Se debe permitir autenticar los usuarios.
 
-### Reglas:
+## Reglas:
 	
 * Se dispone de 1 fin de semana (o 3 días hábiles) para resolver ejercicio.
 * El ejercicio debería llevar unas 6 a 10 hs para resolverlo.
@@ -37,10 +37,15 @@ Se debe desarrollar una API que permita a la empresa contar con un sistema de re
 * Se debe hacer una demostración de que fue lo que se hizo ante el equipo de desarrollo.
 
 
-### Sugerencia de tecnologías a utilizar:
+## Sugerencia de tecnologías a utilizar:
 
 **Laravel / Symfony / node.js**
 
-### Herramientas Sugeridas:
+## Herramientas Sugeridas:
 
 **Postman:** para hacer las pruebas de la API. https://www.getpostman.com/
+
+## Herramientas:
+
+* [Optimus\Heimdal](https://github.com/esbenp/heimdal): A modern exception handler for APIs with Sentry and Bugsnag integration out-of-the-box
+* [Optimus\Bruno](https://github.com/esbenp/bruno): A base controller class that gives sorting, filtering, eager loading and pagination for your endpoints

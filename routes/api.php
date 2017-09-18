@@ -37,6 +37,18 @@ Route::middleware('jwt.auth')->group(function () {
     Route::post('greenfriday', 'GreenFridayController@create');
     Route::put('greenfriday/{greenFriday}', 'GreenFridayController@update');
     Route::delete('greenfriday/{greenFriday}', 'GreenFridayController@delete');
+
+/* MeetingRoom Event Model API Routes */
+    Route::get('meetingroom', 'MeetingRoomController@index');
+    Route::get('meetingroom/{meetingRoom}', 'MeetingRoomController@show');
+    Route::post('meetingroom', 'MeetingRoomController@create');
+    Route::put('meetingroom/{meetingRoom}', 'MeetingRoomController@update');
+    Route::delete('meetingroom/{meetingRoom}', 'MeetingRoomController@delete');
+
+/* Event Model API Routes */
+    Route::get('event', 'EventController@index');
+    Route::get('event/{event}', 'EventController@show');
+    Route::delete('event/{event}', 'EventController@delete');
 });
 
 Route::post('authenticate', 'AuthenticateController@authenticate');                 
